@@ -1,0 +1,206 @@
+<?xml version="1.0"?>
+
+<rdf:RDF
+xml:base="http://www.semanticweb.org/ontologies/food#"
+         xmlns="http://www.semanticweb.org/ontologies/food#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xml="http://www.w3.org/XML/1998/namespace"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+
+  <owl:Ontology rdf:about="http://www.semanticweb.org/ontologies/food#"/>
+
+  <!-- Classes -->
+  <owl:Class rdf:about="http://www.semanticweb.org/ontologies/food#FoodProduct"/>
+  <owl:Class rdf:about="http://www.semanticweb.org/ontologies/food#Ingredient"/>
+  <owl:Class rdf:about="http://www.semanticweb.org/ontologies/food#Flavor"/>
+
+  <!-- Properties -->
+  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/food#hasIngredient">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/food#FoodProduct"/>
+    <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/food#Ingredient"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/food#hasFlavor">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/food#FoodProduct"/>
+    <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/food#Flavor"/>
+  </owl:ObjectProperty>
+
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/food#hasExpiryDate">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/food#Ingredient"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/food#hasSaltContent">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/food#FoodProduct"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/food#hasSugarContent">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/food#FoodProduct"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/food#hasFatContent">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/food#FoodProduct"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/food#hasName">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/food#FoodProduct"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+
+  <!-- Individuals -->
+  <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/food#Pizza">
+    <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/food#FoodProduct"/>
+    <hasName>Pizza</hasName>
+    <hasIngredient rdf:resource="http://www.semanticweb.org/ontologies/food#Dough"/>
+    <hasIngredient rdf:resource="http://www.semanticweb.org/ontologies/food#TomatoSauce"/>
+    <hasIngredient rdf:resource="http://www.semanticweb.org/ontologies/food#Cheese"/>
+    <hasFlavor rdf:resource="http://www.semanticweb.org/ontologies/food#Savory"/>
+    <hasSaltContent rdf:datatype="http://www.w3.org/2001/XMLSchema#float">2.5</hasSaltContent>
+    <hasSugarContent rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</hasSugarContent>
+    <hasFatContent rdf:datatype="http://www.w3.org/2001/XMLSchema#float">5.0</hasFatContent>
+  </owl:NamedIndividual>
+
+  <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/food#Burger">
+    <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/food#FoodProduct"/>
+    <hasName>Burger</hasName>
+    <hasIngredient rdf:resource="http://www.semanticweb.org/ontologies/food#Bun"/>
+    <hasIngredient rdf:resource="http://www.semanticweb.org/ontologies/food#BeefPatty"/>
+    <hasIngredient rdf:resource="http://www.semanticweb.org/ontologies/food#Lettuce"/>
+    <hasFlavor rdf:resource="http://www.semanticweb.org/ontologies/food#Savory"/>
+    <hasSaltContent rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.8</hasSaltContent>
+    <hasSugarContent rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.5</hasSugarContent>
+    <hasFatContent rdf:datatype="http://www.w3.org/2001/XMLSchema#float">8.0</hasFatContent>
+  </owl:NamedIndividual>
+
+  <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/food#Salad">
+    <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/food#FoodProduct"/>
+    <hasName>Salad</hasName>
+    <hasIngredient rdf:resource="http://www.semanticweb.org/ontologies/food#Lettuce"/>
+    <hasIngredient rdf:resource="http://www.semanticweb.org/ontologies/food#Tomato"/>
+    <hasIngredient rdf:resource="http://www.semanticweb.org/ontologies/food#Cucumber"/>
+    <hasFlavor rdf:resource="http://www.semanticweb.org/ontologies/food#Fresh"/>
+    <hasSaltContent rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.5</hasSaltContent>
+    <hasSugarContent rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.2</hasSugarContent>
+    <hasFatContent rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.3</hasFatContent>
+  </owl:NamedIndividual>
+
+  <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/food#Sushi">
+    <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/food#FoodProduct"/>
+    <hasName>Sushi</hasName>
+    <hasIngredient rdf:resource="http://www.semanticweb.org/ontologies/food#Rice"/>
+    <hasIngredient rdf:resource="http://www.semanticweb.org/ontologies/food#Fish"/>
+    <hasIngredient rdf:resource="http://www.semanticweb.org/ontologies/food#Seaweed"/>
+    <hasFlavor rdf:resource="http://www.semanticweb.org/ontologies/food#Umami"/>
+    <hasSaltContent rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.2</hasSaltContent>
+    <hasSugarContent rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.8</hasSugarContent>
+    <hasFatContent rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.5</hasFatContent>
+  </owl:NamedIndividual>
+
+  <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/food#Pasta">
+    <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/food#FoodProduct"/>
+    <hasName>Pasta</hasName>
+    <hasIngredient rdf:resource="http://www.semanticweb.org/ontologies/food#Spaghetti"/>
+    <hasIngredient rdf:resource="http://www.semanticweb.org/ontologies/food#TomatoSauce"/>
+    <hasIngredient rdf:resource="http://www.semanticweb.org/ontologies/food#ParmesanCheese"/>
+    <hasFlavor rdf:resource="http://www.semanticweb.org/ontologies/food#Rich"/>
+    <hasSaltContent rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</hasSaltContent>
+    <hasSugarContent rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.5</hasSugarContent>
+    <hasFatContent rdf:datatype="http://www.w3.org/2001/XMLSchema#float">3.0</hasFatContent>
+  </owl:NamedIndividual>
+
+  <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/food#IceCream">
+    <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/food#FoodProduct"/>
+    <hasName>Ice Cream</hasName>
+    <hasIngredient rdf:resource="http://www.semanticweb.org/ontologies/food#Milk"/>
+    <hasIngredient rdf:resource="http://www.semanticweb.org/ontologies/food#Sugar"/>
+    <hasIngredient rdf:resource="http://www.semanticweb.org/ontologies/food#Vanilla"/>
+    <hasFlavor rdf:resource="http://www.semanticweb.org/ontologies/food#Sweet"/>
+    <hasSaltContent rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.2</hasSaltContent>
+    <hasSugarContent rdf:datatype="http://www.w3.org/2001/XMLSchema#float">15.0</hasSugarContent>
+    <hasFatContent rdf:datatype="http://www.w3.org/2001/XMLSchema#float">8.0</hasFatContent>
+  </owl:NamedIndividual>
+
+  <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/food#Dough">
+    <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/food#Ingredient"/>
+  </owl:NamedIndividual>
+
+  <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/food#TomatoSauce">
+    <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/food#Ingredient"/>
+  </owl:NamedIndividual>
+
+  <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/food#Cheese">
+    <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/food#Ingredient"/>
+    <hasExpiryDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-02-01</hasExpiryDate>
+  </owl:NamedIndividual>
+
+  <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/food#Bun">
+    <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/food#Ingredient"/>
+  </owl:NamedIndividual>
+
+  <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/food#BeefPatty">
+    <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/food#Ingredient"/>
+    <hasSaltContent rdf:datatype="http://www.w3.org/2001/XMLSchema#float">2.0</hasSaltContent>
+    <hasFatContent rdf:datatype="http://www.w3.org/2001/XMLSchema#float">15.0</hasFatContent>
+  </owl:NamedIndividual>
+
+  <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/food#Lettuce">
+    <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/food#Ingredient"/>
+  </owl:NamedIndividual>
+
+  <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/food#Tomato">
+    <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/food#Ingredient"/>
+  </owl:NamedIndividual>
+
+  <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/food#Cucumber">
+    <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/food#Ingredient"/>
+  </owl:NamedIndividual>
+
+  <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/food#Rice">
+    <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/food#Ingredient"/>
+  </owl:NamedIndividual>
+
+  <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/food#Fish">
+    <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/food#Ingredient"/>
+    <hasSaltContent rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.5</hasSaltContent>
+    <hasFatContent rdf:datatype="http://www.w3.org/2001/XMLSchema#float">5.0</hasFatContent>
+  </owl:NamedIndividual>
+
+  <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/food#Seaweed">
+    <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/food#Ingredient"/>
+  </owl:NamedIndividual>
+
+  <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/food#Spaghetti">
+    <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/food#Ingredient"/>
+  </owl:NamedIndividual>
+
+  <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/food#ParmesanCheese">
+    <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/food#Ingredient"/>
+    <hasSaltContent rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.2</hasSaltContent>
+    <hasFatContent rdf:datatype="http://www.w3.org/2001/XMLSchema#float">4.0</hasFatContent>
+  </owl:NamedIndividual>
+
+  <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/food#Milk">
+    <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/food#Ingredient"/>
+  </owl:NamedIndividual>
+
+  <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/food#Sugar">
+    <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/food#Ingredient"/>
+  </owl:NamedIndividual>
+
+  <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/food#Vanilla">
+    <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/food#Ingredient"/>
+  </owl:NamedIndividual>
+
+  <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/food#Umami">
+    <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/food#Flavor"/>
+  </owl:NamedIndividual>
+
+  <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/food#Rich">
+    <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/food#Flavor"/>
+  </owl:NamedIndividual>
+
+  <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/food#Sweet">
+    <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/food#Flavor"/>
+</owl:NamedIndividual>
+</rdf:RDF>
