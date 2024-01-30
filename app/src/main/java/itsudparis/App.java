@@ -1,8 +1,11 @@
 package itsudparis;
 
+import java.util.Scanner;
+
 import org.apache.jena.rdf.model.Model;
 
 import itsudparis.tools.JenaEngine;
+import itsudparis.tools.QuitException;
 
 public class App {
   public static void main(String[] args) {
@@ -22,6 +25,16 @@ public class App {
     } else {
       System.out.println("Error when reading model from ontology");
     }
+  }
+
+  private String readFromUserInput() throws QuitException {
+    Scanner scanner = new Scanner(System.in);
+    String input = scanner.nextLine();
+    scanner.close();
+    if (input.equals("exit") || input.equals("quit") || input.isEmpty() || input.isBlank()) {
+      throw new QuitException();
+    }
+    return input;
   }
 
 }

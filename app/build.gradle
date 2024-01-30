@@ -48,7 +48,7 @@ java {
 
 application {
     // Define the main class for the application.
-    mainClass = 'itsudparis.application.MainOpenFoodFacts'
+    mainClass = 'itsudparis.App'
 }
 
 run {
