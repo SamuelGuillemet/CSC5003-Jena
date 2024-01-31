@@ -11,6 +11,7 @@ public class App {
   public static void main(String[] args) {
     // lire le model a partir d'une ontologie
     Model model = JenaEngine.readModel("food.rdf");
+    model = JenaEngine.readInferencedModelFromRuleFile(model, "rules.txt");
     if (model != null) {
       App app = new App();
       app.interactive(model);
@@ -98,6 +99,15 @@ public class App {
     return JenaEngine.executePlainQuery(model, sb.toString());
   }
 
+  private String getTooMuchSugar(Model model) {
+    StringBuilder sb = new StringBuilder();
+    sb.append("SELECT ?foodProduct");
+    sb.append(" WHERE {");
+    sb.append(" ?foodProduct ns:hasTooMuchSugar true.");
+    sb.append("}");
+    return JenaEngine.executePlainQuery(model, sb.toString());
+  }
+
   private void interactive(Model model) {
     Scanner scanner = new Scanner(System.in);
     while (true) {
@@ -118,6 +128,9 @@ public class App {
             result = getMostFatProduct(model);
             break;
           case "5":
+            result = getTooMuchSugar(model);
+            break;
+          case "6":
             System.out.println("Enter the name of a product: ");
             String foodProduct = scanner.nextLine();
             result = listIngredients(model, foodProduct);

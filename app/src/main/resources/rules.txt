@@ -1,0 +1,29 @@
+@prefix ns: <http://www.semanticweb.org/ontologies/food#>
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+@prefix owl: <http://www.w3.org/2002/07/owl#>
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+
+[rule1:
+  (?p rdf:type ns:FoodProduct)
+  (?p hasIngredient ?i)
+  (?i hasExpiryDate ?d)
+  (?d xsd:date ?date)
+  (?date > "2019-01-01"^^xsd:date)
+   -> 
+  (?p hasExpired true)
+]
+
+[rule2:
+  (?p rdf:type ns:FoodProduct)
+  (?p hasIngredient ?i)
+  (?i hasSugarContent ?s)
+  (?s > 1.5)
+   -> 
+  (?p hasTooMuchSugar true)
+]
+
+//[rule3:
+//  (?p rdf:type ns:FoodProduct)
+//  ->
+//  (?p rdf:type ns:Ingredient)
+//]
